@@ -17,14 +17,14 @@ public class codigo {
 
     private WebDriver navegador;
     private String tmp;
-
+    private String dir = "/Users/leandrobrum/autoMaven/chromedriver";
 
 
     @Dado("configurei ambiente para acessar URL Chrome")
     public void configurei_ambiente_para_acessar_URL_Chrome() {
         // Write code here that turns the phrase above into concrete actions
 
-        System.setProperty("webdriver.chrome.driver", "/Users/leandrobrum/autoMaven/chromedriver");
+        System.setProperty("webdriver.chrome.driver", dir);
 
     }
 
@@ -33,7 +33,9 @@ public class codigo {
     public void abreSimulador() {
 
         navegador = new ChromeDriver();
+
         navegador.get("https://www.webmotors.com.br/");
+
         navegador.manage().window().maximize();
 
     }
